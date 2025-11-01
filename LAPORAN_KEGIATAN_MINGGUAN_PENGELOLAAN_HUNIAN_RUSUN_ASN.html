@@ -1,0 +1,1528 @@
+<html lang="id"><head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6ImQzNTlhZTBjMTczYzc3YjFjZDU1MjFiMjVhMWY2YTQ5ZWU1YTZkMjQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIwNjQyODg1OTg3ODMzMTQ5MDExNyIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzYwYjc2MTg1ZWNjODdlZmZfbGFwb3Jhbl9taW5nZ3Vhbi5odG1sLTM3NiJ9LCJleHAiOjE3NjE5NzgxMTIsImlhdCI6MTc2MTk3NDUxMiwiYWxnIjoiUlMyNTYifQ.lj8lcfS2SfHmaLmPdVFxuc_Oqx_wAXrLX5Sgr4WwNxUsJUDAYUokqM4LRiGJ1nd3zZRfvCkAviZiPyJ7Vir312ve1vPxadCS5XnaNjHI-yxwSdxacxn2ekZGTpVXq0uvUGliMG-9NxtmI_dqH2HZdLwwzJ38SmBQWOrcM06Y3jvJKBihcrijA8BMRPeoHMTUNgsOxypsGv2bJHz6ZehNEWFz-XEY7fFznlbgH3mENvIHVwIQQJV4ncdfJQDkd61lE0sndOGCAKfK4HsRO1F9zmZ_cGCoQVnDtldG3bQ3jS7mc6F_0fAiGiahnJglkFOZSyOhZ8HL8AnIqjCQoVCvVg","c_60b76185ecc87eff_laporan_mingguan.html-376")</script><script>'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){const d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);const c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{let a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){const b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{const c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){const c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{const c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){const c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);const e=yield c.blob();return new Promise((f,g)=>{const k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){let c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){const c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());let e;try{const f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){const b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");const c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;let c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){const c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{let g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){const g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){const b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{const e=d?(new URL(b,d||void 0)).toString():b;let f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){const [c,,e]=ia.exec(d)||[],f=c,g=e;if(!g)return"";if(g===b)return`src: ${f};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;const c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c;const e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){const d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){const d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){let d=a.cssText;const c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){let g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];const b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){const d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){const g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}const d=new Set;b(a);return d}function ua(a,b){return t(function*(){const d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){const d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){const c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){const {width:d,height:c}=A(a,b);var e=yield wa(a,b);e=yield B(e);const f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=
+16384));f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;const c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){const a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){let b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){const b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-2.5-flash-preview-09-2025","imageModelName":"imagen-3.0-generate-002","imageEditModelName":"gemini-2.5-flash-image-preview","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20"],"deprecatedImageModelNames":["imagen-3.0-generate-001"]})</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <!-- Judul bisa diedit -->
+  <title id="doc-title">Template Laporan Mingguan - Rusun ASN</title>
+  <!-- Memuat Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Memuat Google Font "Inter" -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <!-- MEMUAT LIBRARY CHART.JS -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" crossorigin="anonymous"></script>
+  
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background-color: #f1f5f9; /* bg-slate-100 */
+    }
+    
+    /* Kontainer halaman utama */
+    .page {
+      max-width: 1000px; 
+      margin: 24px auto; 
+      background: white; 
+      border-radius: 12px; 
+      padding: 32px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border: 1px solid #e2e8f0;
+    }
+    
+    /* Judul bagian */
+    .section-heading {
+      font-size: 1.1rem; /* 18px */
+      font-weight: 600; /* semibold */
+      color: #0f172a; /* DIUBAH: text-slate-900 (hitam pekat) */
+      border-bottom: 2px solid #dbeafe; /* border-blue-100 */
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+
+    /* Tombol Aksi */
+    .btn {
+      padding: 8px 16px;
+      border-radius: 6px;
+      color: white;
+      font-weight: 500;
+      transition: background-color 0.2s;
+      cursor: pointer;
+    }
+    .btn-green { background-color: #16a34a; } /* green-600 */
+    .btn-green:hover { background-color: #15803d; } /* green-700 */
+    .btn-blue { background-color: #2563eb; } /* blue-600 */
+    .btn-blue:hover { background-color: #1d4ed8; } /* blue-700 */
+    .btn-red { background-color: #dc2626; } /* red-600 */
+    .btn-red:hover { background-color: #b91c1c; } /* red-700 */
+    .btn-gray { background-color: #475569; } /* slate-600 */
+    .btn-gray:hover { background-color: #334155; } /* slate-700 */
+
+    /* Tombol AI kecil */
+    .btn-sm {
+      padding: 4px 8px;
+      font-size: 0.8rem;
+    }
+
+    /* Animasi spinner untuk loading AI */
+    .spinner {
+      border: 3px solid #f3f3f3; /* Light grey */
+      border-top: 3px solid #3b82f6; /* Blue */
+      border-radius: 50%;
+      width: 16px;
+      height: 16px;
+      animation: spin 1s linear infinite;
+      display: inline-block;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    @keyframes spin { 
+      0% { transform: rotate(0deg); } 
+      100% { transform: rotate(360deg); } 
+    }
+
+    /* Gaya Tabel "Excel" */
+    .excel-table {
+      width: 100%;
+      border-collapse: collapse;
+      border: 1px solid #cbd5e1; /* slate-300 */
+    }
+    .excel-table th, .excel-table td {
+      border: 1px solid #cbd5e1; /* slate-300 */
+      padding: 8px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 0.9rem;
+    }
+    .excel-table th {
+      background-color: #f1f5f9; /* slate-100 */
+      font-weight: 600;
+      color: #334155; /* slate-700 */
+    }
+    .excel-table td {
+      background-color: #fff;
+    }
+
+    /* Input di dalam tabel */
+    .table-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1; /* slate-300 */
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .table-input:focus {
+      outline: none;
+      border-color: #2563eb; /* blue-600 */
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+    .table-textarea {
+      width: 100%;
+      min-height: 60px;
+      padding: 6px 8px;
+      border: 1px solid #cbd5e1; /* slate-300 */
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+    .table-textarea:focus {
+      outline: none;
+      border-color: #2563eb; /* blue-600 */
+      box-shadow: 0 0 0 1px #2563eb;
+    }
+
+    /* Input formulir biasa */
+    .form-input-line {
+      width: 100%;
+      border: none;
+      border-bottom: 2px solid #e2e8f0; /* slate-200 */
+      padding: 8px 4px;
+      background: transparent;
+    }
+    .form-input-line:focus {
+      outline: none;
+      border-color: #2563eb; /* blue-600 */
+    }
+    
+    .form-textarea-box {
+      width: 100%;
+      border: 1px solid #cbd5e1; /* slate-300 */
+      border-radius: 6px;
+      padding: 10px;
+      background: #f8fafc; /* slate-50 */
+    }
+    .form-textarea-box:focus {
+      outline: none;
+      border-color: #2563eb; /* blue-600 */
+      box-shadow: 0 0 0 1px #2563eb;
+      background: #fff;
+    }
+
+    /* Gaya upload file */
+    .form-input-file {
+      font-size: 0.9rem;
+    }
+    .form-input-file-small {
+      font-size: 0.8rem;
+    }
+
+    /* Kontainer preview gambar */
+    .image-preview-container {
+      margin-top: 8px;
+      border: 1px solid #e2e8f0; /* slate-200 */
+      border-radius: 6px;
+      padding: 8px;
+      background-color: #f8fafc; /* slate-50 */
+    }
+    .image-preview {
+      max-width: 100%;
+      max-height: 200px;
+      height: auto;
+      border-radius: 4px;
+      object-fit: contain; /* Penting agar gambar tidak terdistorsi */
+      margin: 0 auto; /* Pusatkan gambar */
+      display: block;
+    }
+
+    /* Kotak Tanda Tangan Horizontal */
+    .signature-box {
+      border: 1px dashed #cbd5e1; /* border-slate-300 */
+      border-radius: 8px;
+      padding: 8px;
+      display: flex;
+      flex-direction: column;
+      height: 200px; /* Tinggi tetap untuk kotak TTD */
+      background-color: #f8fafc; /* bg-slate-50 */
+    }
+    .signature-box .image-preview-container {
+      height: 100%; /* Ambil sisa tinggi */
+      min-height: 100px; /* Tinggi minimum */
+      display: flex; /* Ditambahkan untuk memusatkan img */
+      justify-content: center;
+      align-items: center;
+      border: none;
+      background-color: transparent;
+      padding: 0;
+    }
+    .signature-box .image-preview {
+      max-height: 100%; /* Pastikan gambar pas di dalam container */
+      width: auto;
+      max-width: 100%;
+    }
+
+
+    /* Aturan cetak (print) */
+    @media print {
+      body {
+        background-color: white;
+        font-family: 'Times New Roman', Times, serif;
+      }
+      .page {
+        margin: 0;
+        padding: 0;
+        border: none;
+        box-shadow: none;
+        max-width: 100%;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .form-input-line, .form-textarea-box, .table-input, .table-textarea {
+        border: none !important;
+        box-shadow: none !important;
+        padding-left: 0;
+        padding-right: 0;
+        background: transparent !important;
+      }
+      .form-textarea-box, .table-textarea {
+        min-height: auto; /* Biarkan konten menentukan tinggi */
+      }
+      .image-preview-container {
+        border: none !important;
+        padding: 0 !important;
+        background: transparent !important;
+      }
+      .image-preview {
+        max-height: 150px !important; /* Batasi tinggi gambar saat cetak */
+      }
+      .excel-table {
+        border: 1px solid #999;
+      }
+      .excel-table th, .excel-table td {
+        border: 1px solid #999;
+      }
+      .excel-table th {
+        background-color: #eee !important;
+        -webkit-print-color-adjust: exact; /* Paksa cetak warna latar */
+        color-adjust: exact;
+      }
+      
+      /* Pastikan grafik tidak tercetak */
+      #recapChartContainer, #dailyTrendChartContainer, #crewChartContainer {
+        display: none !important;
+      }
+
+      .signature-box {
+        border: 1px solid #999;
+        height: 180px;
+        background: transparent !important;
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.relative{position:relative}.sticky{position:sticky}.top-0{top:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-0{margin-bottom:0px}.mb-2{margin-bottom:0.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.mb-8{margin-bottom:2rem}.ml-4{margin-left:1rem}.mr-1{margin-right:0.25rem}.mr-2{margin-right:0.5rem}.mt-12{margin-top:3rem}.mt-2{margin-top:0.5rem}.mt-4{margin-top:1rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-4{height:1rem}.h-5{height:1.25rem}.h-64{height:16rem}.\!max-h-\[100px\]{max-height:100px !important}.\!max-h-\[400px\]{max-height:400px !important}.w-1\/2{width:50%}.w-1\/3{width:33.333333%}.w-1\/4{width:25%}.w-12{width:3rem}.w-16{width:4rem}.w-24{width:6rem}.w-28{width:7rem}.w-32{width:8rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-full{width:100%}.min-w-\[1000px\]{min-width:1000px}.max-w-2xl{max-width:42rem}.max-w-5xl{max-width:64rem}.max-w-sm{max-width:24rem}.flex-grow{flex-grow:1}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-center{align-items:center}.justify-start{justify-content:flex-start}.justify-between{justify-content:space-between}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-x-6{column-gap:1.5rem}.overflow-x-auto{overflow-x:auto}.rounded-lg{border-radius:0.5rem}.border{border-width:1px}.border-b-0{border-bottom-width:0px}.border-t{border-top-width:1px}.\!border-none{border-style:none !important}.border-slate-300{--tw-border-opacity:1;border-color:rgb(203 213 225 / var(--tw-border-opacity, 1))}.\!bg-transparent{background-color:transparent !important}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-white\/80{background-color:rgb(255 255 255 / 0.8)}.object-contain{object-fit:contain}.p-3{padding:0.75rem}.p-4{padding:1rem}.pb-0{padding-bottom:0px}.pt-8{padding-top:2rem}.text-center{text-align:center}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.\!shadow-none{--tw-shadow:0 0 #0000 !important;--tw-shadow-colored:0 0 #0000 !important;box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important}.shadow-md{--tw-shadow:0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-sm{--tw-backdrop-blur:blur(4px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}@media (min-width: 640px){.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}}@media (min-width: 768px){.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-5{grid-template-columns:repeat(5, minmax(0, 1fr))}}</style></head>
+<body class="bg-slate-100">
+
+  <!-- Tombol Aksi Global (Sticky) -->
+  <div class="no-print sticky top-0 z-50 bg-white/80 backdrop-blur-sm shadow-md p-3">
+    <div class="max-w-5xl mx-auto flex justify-between items-center">
+      <h2 class="text-lg font-semibold text-slate-800">Mode Edit Laporan</h2>
+      
+      <!-- Dibungkus dengan div untuk tata letak tombol -->
+      <div class="flex items-center gap-3">
+        <!-- TOMBOL BARU: Download HTML -->
+        <button onclick="downloadHTML()" class="btn btn-blue flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          Download HTML
+        </button>
+        
+        <!-- Tombol Print / PDF yang sudah ada -->
+        <button onclick="window.print()" class="btn btn-green flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5 4v3H4a2 2 0 00-2 2v3a2 2 0 002 2h1v3a2 2 0 002 2h6a2 2 0 002-2v-3h1a2 2 0 002-2V9a2 2 0 00-2-2h-1V4a2 2 0 00-2-2H7a2 2 0 00-2 2zm8 0H7v3h6V4zm0 8H7v3h6v-3z" clip-rule="evenodd"></path></svg>
+          Print / Simpan PDF
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="page">
+    <!-- Header -->
+    <header class="mb-8">
+      <div class="flex justify-between items-center mb-4">
+        <!-- Logo Kiri (OIKN) -->
+        <div class="w-1/4">
+          <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'logo-oikn')">
+          <div id="logo-oikn" class="image-preview-container hidden">
+            <img src="" alt="Preview Logo OIKN" class="image-preview !max-h-[100px]">
+          </div>
+        </div>
+        
+        <!-- Judul Laporan (Bisa Diedit) -->
+        <div class="w-1/2 text-center">
+          <textarea id="report-title" class="form-textarea-box text-xl font-bold text-center !border-none !shadow-none !bg-transparent" rows="2">LAPORAN KEGIATAN MINGGUAN PENGELOLAAN HUNIAN RUSUN ASN</textarea>
+        </div>
+        
+        <!-- Logo Kanan (Perusahaan) -->
+        <div class="w-1/4">
+          <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'logo-perusahaan')">
+          <div id="logo-perusahaan" class="image-preview-container hidden">
+            <img src="" alt="Preview Logo Perusahaan" class="image-preview !max-h-[100px]">
+          </div>
+        </div>
+      </div>
+      
+      <!-- Paragraf Kontrak (Bisa Diedit) -->
+      <textarea class="form-textarea-box text-sm text-slate-700" rows="4" placeholder="[Paragraf Kontrak - bisa diedit]... Berdasarkan Surat Perjanjian Kontrak Nomor...">Berdasarkan Surat Perjanjian Kontrak Nomor PRJ-20/OIKN.PPK-XIX/2025 tanggal 1 Agustus 2025 antara PPK-XIX dengan Direktur PT. Moritz Sukses Sejatera perihal Paket Pekerjaan Operations Maintenance Apartemen West Residence, bersama ini dengan hormat kami menyampaikan laporan sebagai berikut:</textarea>
+    </header>
+
+    <!-- Bagian A: Waktu Kegiatan (Layout Diperbaiki) -->
+    <section class="mb-6">
+      <h3 class="section-heading">A. WAKTU KEGIATAN</h3>
+      <div class="ml-4 grid grid-cols-1 md:grid-cols-2 gap-x-6">
+        <div class="flex items-center">
+          <label for="hari-tanggal" class="font-medium text-slate-700 w-32">Hari/Tanggal:</label>
+          <input type="text" id="hari-tanggal" class="form-input-line" placeholder="cth: Rabu, 01 Oktober 2025 - Selasa, 07 Oktober 2025" value="">
+        </div>
+        <div class="flex items-center">
+          <label for="periode" class="font-medium text-slate-700 w-32">Periode:</label>
+          <input type="text" id="periode" class="form-input-line" placeholder="cth: Minggu ke-1 (Oktober 2025)" value="">
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian B: Lokasi Kegiatan (Layout Diperbaiki & Center) -->
+    <section class="mb-6">
+      <h3 class="section-heading">B. LOKASI KEGIATAN</h3>
+      <div class="ml-4">
+        <textarea class="form-textarea-box text-sm" rows="3" placeholder="[Deskripsi Lokasi - bisa diedit]... Lokasi kegiatan pengelolaan Rusun ASN...">Lokasi kegiatan pengelolaan Rusun ASN 4 West Residence terletak di Kawasan Inti Pusat Pemerintahan IKN dengan koordinat 0°58'30"S 116°41'47"E Rusun ASN West Residence, Tower 1,2,3,4,5,6,7dan 8.</textarea>
+        
+        <!-- Upload Gambar Kawasan (CENTERED) -->
+        <div class="mt-4 flex flex-col items-center">
+          <label class="font-medium text-slate-700 mb-2">Upload Gambar Desain Kawasan:</label>
+          <input type="file" class="form-input-file no-print" accept="image/*" onchange="previewFile(this, 'gambar-kawasan')">
+          <div id="gambar-kawasan" class="image-preview-container hidden mt-2 w-full max-w-2xl">
+            <img src="" alt="Preview Gambar Kawasan" class="image-preview !max-h-[400px]">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian C: Pelaksana -->
+    <section class="mb-6">
+      <h3 class="section-heading">C. PELAKSANA</h3>
+      <div class="ml-4 overflow-x-auto">
+        <table class="excel-table min-w-[1000px]">
+          <thead>
+            <tr>
+              <th class="w-12">No</th>
+              <th>Departement</th>
+              <th>Nama</th>
+              <th>Check In</th>
+              <th>Check Out</th>
+              <th>Upload Absensi Masuk</th>
+              <th>Upload Absensi Keluar</th>
+              <th class="w-1/4">Keterangan</th>
+              <th class="w-16 no-print">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="personel-table-body">
+            <!-- Baris akan ditambahkan oleh JavaScript -->
+          </tbody>
+        </table>
+        <button onclick="addPersonelRow()" class="btn btn-blue mt-4 no-print">+ Tambah Pelaksana</button>
+      </div>
+    </section>
+
+    <!-- Bagian D: Kegiatan Harian -->
+    <section class="mb-6">
+      <h3 class="section-heading">D. KEGIATAN HARIAN</h3>
+      <div class="ml-4 overflow-x-auto">
+        <table class="excel-table min-w-[1000px]">
+          <thead>
+            <tr>
+              <th class="w-12">No</th>
+              <th class="w-28">Tanggal</th>
+              <th class="w-40">Lokasi/Tower</th>
+              <th class="w-1/3">Kegiatan</th>
+              <th>Upload Dokumentasi</th>
+              <th class="w-16 no-print">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="kegiatan-table-body">
+            <!-- Baris akan ditambahkan oleh JavaScript -->
+          </tbody>
+        </table>
+        <button onclick="addKegiatanRow()" class="btn btn-blue mt-4 no-print">+ Tambah Kegiatan</button>
+      </div>
+    </section>
+
+    <!-- Bagian E: Hasil Monitoring Kegiatan -->
+    <section class="mb-6">
+      <h3 class="section-heading">E. HASIL MONITORING KEGIATAN</h3>
+      <div class="ml-4 overflow-x-auto">
+        <table class="excel-table min-w-[1000px]">
+          <thead>
+            <tr>
+              <th class="w-12">No</th>
+              <th class="w-1/4">Kegiatan / Kejadian</th>
+              <th class="w-1/4">Capaian</th>
+              <th class="w-1/4">Outstanding</th>
+              <th class="w-1/4">Saran / Rekomendasi</th>
+              <th class="w-16 no-print">Aksi</th>
+            </tr>
+          </thead>
+          <tbody id="monitoring-table-body">
+            <!-- Baris akan ditambahkan oleh JavaScript -->
+          </tbody>
+        </table>
+        <button onclick="addMonitoringRow()" class="btn btn-blue mt-4 no-print">+ Tambah Monitoring</button>
+      </div>
+    </section>
+
+    <!-- Bagian F: Rekapitulasi Eksisting Unit (Dengan Grafik) -->
+    <section class="mb-6">
+      <h3 class="section-heading">F. REKAPITULASI EKSISTING UNIT</h3>
+      <div class="ml-4">
+        <!-- Info Site (Bisa Diedit) -->
+        <textarea class="form-textarea-box text-sm mb-4" rows="3" placeholder="[Info Site - bisa diedit]... Site: RUSUN ASN 2...">Site: RUSUN ASN 2
+Tower Aktif (Tahap Pengelolaan): 1, 4, 7, 5, 6, 8 (Total 6 Tower)
+Kapasitas per Tower: 60 Unit
+Total Kapasitas Aktif: 360 Unit</textarea>
+
+        <!-- Tabel 1: Catatan Status Harian -->
+        <h4 class="font-semibold text-slate-700 mb-2">1. Catatan Status Harian (Per Tower)</h4>
+        <div class="overflow-x-auto">
+          <table class="excel-table min-w-[1000px]">
+            <thead>
+              <tr>
+                <th class="w-12">No</th>
+                <th class="w-32">Tanggal</th>
+                <th class="w-24">Tower</th>
+                <th>Guest In House</th>
+                <th>Saleable Rooms</th>
+                <th>Out Of Order (OOO)</th>
+                <th class="w-1/3">Keterangan</th>
+                <th class="w-16 no-print">Aksi</th>
+              </tr>
+            </thead>
+            <tbody id="harian-table-body">
+              <!-- Baris akan ditambahkan oleh JavaScript -->
+            </tbody>
+          </table>
+          <button onclick="addHarianRow()" class="btn btn-blue mt-4 no-print">+ Tambah Catatan Harian</button>
+        </div>
+
+        <!-- Tabel 2: Total Rekapitulasi Mingguan -->
+        <h4 class="font-semibold text-slate-700 mt-6 mb-2">2. Total Rekapitulasi Mingguan</h4>
+        <div class="overflow-x-auto">
+          <table class="excel-table">
+            <thead>
+              <tr>
+                <th>Kategori</th>
+                <th>Total (Mingguan)</th>
+                <th class="w-1/2">Keterangan / Analisis Singkat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium">Guest In House</td>
+                <td><input type="number" id="total-guest" class="table-input" value="0"></td>
+                <td rowspan="3"><textarea id="recap-analysis" class="table-textarea" rows="4" placeholder="Analisis singkat dari total mingguan..."></textarea></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Saleable Rooms</td>
+                <td><input type="number" id="total-saleable" class="table-input" value="0"></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Out Of Order (OOO)</td>
+                <td><input type="number" id="total-ooo" class="table-input" value="0"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Grafik -->
+        <h4 class="font-semibold text-slate-700 mt-6 mb-2">3. Visualisasi Grafik</h4>
+        <div class="flex justify-start gap-4 mb-4 no-print">
+          <button onclick="updateRecapChart()" class="btn btn-gray">Update Grafik Total</button>
+          <button onclick="updateDailyTrendChart()" class="btn btn-gray">Update Grafik Tren Harian</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 border rounded-lg bg-slate-50">
+          <!-- Grafik 1: Rekap Total (Donat) -->
+          <div id="recapChartContainer">
+            <h5 class="font-medium text-center text-slate-700 mb-2">Grafik Total Rekapitulasi Unit</h5>
+            <div class="relative w-full max-w-sm mx-auto h-64">
+              <canvas id="recapChart"></canvas>
+            </div>
+          </div>
+          <!-- Grafik 2: Tren Harian (Garis) -->
+          <div id="dailyTrendChartContainer">
+            <h5 class="font-medium text-center text-slate-700 mb-2">Grafik Tren Status Harian</h5>
+            <div class="relative w-full h-64">
+              <canvas id="dailyTrendChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian G: Lembar Evaluasi -->
+    <section class="mb-6">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="section-heading mb-0 border-b-0 pb-0">G. LEMBAR EVALUASI</h3>
+        <button onclick="generateWithAI('evaluasi')" class="btn btn-blue btn-sm no-print flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          Generate AI
+        </button>
+      </div>
+      <div class="ml-4">
+        <textarea id="evaluasi" class="form-textarea-box" rows="6" placeholder="Tuliskan poin-poin evaluasi untuk minggu ini..."></textarea>
+      </div>
+    </section>
+
+    <!-- Bagian H: Action Plan -->
+    <section class="mb-6">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="section-heading mb-0 border-b-0 pb-0">H. ACTION PLAN</h3>
+        <button onclick="generateWithAI('actionplan')" class="btn btn-blue btn-sm no-print flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          Generate AI
+        </button>
+      </div>
+      <div class="ml-4">
+        <textarea id="actionplan" class="form-textarea-box" rows="6" placeholder="Tuliskan rencana tindak lanjut (action plan) untuk minggu depan berdasarkan evaluasi..."></textarea>
+      </div>
+    </section>
+
+    <!-- Bagian I: Update Jumlah Crew (Dengan Grafik) -->
+    <section class="mb-6">
+      <h3 class="section-heading">I. UPDATE JUMLAH CREW</h3>
+      <div class="ml-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Tabel Input Crew -->
+        <div class="overflow-x-auto">
+          <table class="excel-table">
+            <thead>
+              <tr>
+                <th>Departemen</th>
+                <th>Jumlah Crew</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="font-medium">Housekeeping</td>
+                <td><input type="number" id="crew-housekeeping" class="table-input" value="0"></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Front Office</td>
+                <td><input type="number" id="crew-frontoffice" class="table-input" value="0"></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Gardener</td>
+                <td><input type="number" id="crew-gardener" class="table-input" value="0"></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Decomposer</td>
+                <td><input type="number" id="crew-decomposer" class="table-input" value="0"></td>
+              </tr>
+              <tr>
+                <td class="font-medium">Security</td>
+                <td><input type="number" id="crew-security" class="table-input" value="0"></td>
+              </tr>
+              <tr>
+                <td class="font-medium">MEP</td>
+                <td><input type="number" id="crew-mep" class="table-input" value="0"></td>
+              </tr>
+            </tbody>
+          </table>
+          <button onclick="updateCrewChart()" class="btn btn-gray mt-4 no-print">Update Grafik Crew</button>
+        </div>
+        <!-- Grafik Crew (Batang) -->
+        <div id="crewChartContainer" class="p-4 border rounded-lg bg-slate-50">
+          <h5 class="font-medium text-center text-slate-700 mb-2">Grafik Jumlah Crew per Departemen</h5>
+          <div class="relative w-full h-64">
+             <canvas id="crewChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian J: Kesimpulan -->
+    <section class="mb-6">
+      <div class="flex justify-between items-center mb-4">
+        <h3 class="section-heading mb-0 border-b-0 pb-0">J. KESIMPULAN</h3>
+        <button onclick="generateWithAI('kesimpulan')" class="btn btn-blue btn-sm no-print flex items-center">
+          <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+          Generate AI
+        </button>
+      </div>
+      <div class="ml-4">
+        <textarea id="kesimpulan" class="form-textarea-box" rows="5" placeholder="Tuliskan kesimpulan dari seluruh kegiatan minggu ini..."></textarea>
+      </div>
+    </section>
+
+    <!-- Bagian K: Penutup (Layout Horizontal) -->
+    <section class="mt-12 pt-8 border-t border-slate-300">
+      <div class="ml-4">
+        <textarea class="form-textarea-box" rows="4" placeholder="[Paragraf Penutup - bisa diedit]... Demikian laporan mingguan ini kami sampaikan...">Demikian laporan mingguan ini kami sampaikan sebagai bahan monitoring dan evaluasi Pimpinan. Atas perhatiannya, kami ucapkan terima kasih.</textarea>
+      </div>
+
+      <!-- TATA LETAK TANDA TANGAN HORIZONTAL BARU -->
+      <div class="mt-8 ml-4">
+        
+        <!-- DIBUAT OLEH (SUPERVISOR) -->
+        <h4 class="font-semibold text-slate-700 mb-4">Dibuat oleh:</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+          
+          <!-- Supervisor 1 -->
+          <div class="signature-box">
+            <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'ttd-dibuat-1')">
+            <div id="ttd-dibuat-1" class="image-preview-container flex-grow hidden">
+              <img src="" alt="Preview TTD" class="image-preview object-contain">
+            </div>
+            <input type="text" class="table-input mt-2" placeholder="Supervisor 1" value="">
+          </div>
+          
+          <!-- Supervisor 2 -->
+          <div class="signature-box">
+            <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'ttd-dibuat-2')">
+            <div id="ttd-dibuat-2" class="image-preview-container flex-grow hidden">
+              <img src="" alt="Preview TTD" class="image-preview object-contain">
+            </div>
+            <input type="text" class="table-input mt-2" placeholder="Supervisor 2" value="">
+          </div>
+          
+          <!-- Supervisor 3 -->
+          <div class="signature-box">
+            <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'ttd-dibuat-3')">
+            <div id="ttd-dibuat-3" class="image-preview-container flex-grow hidden">
+              <img src="" alt="Preview TTD" class="image-preview object-contain">
+            </div>
+            <input type="text" class="table-input mt-2" placeholder="Supervisor 3" value="">
+          </div>
+          
+          <!-- Supervisor 4 -->
+          <div class="signature-box">
+            <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'ttd-dibuat-4')">
+            <div id="ttd-dibuat-4" class="image-preview-container flex-grow hidden">
+              <img src="" alt="Preview TTD" class="image-preview object-contain">
+            </div>
+            <input type="text" class="table-input mt-2" placeholder="Supervisor 4" value="">
+          </div>
+          
+          <!-- Supervisor 5 -->
+          <div class="signature-box">
+            <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'ttd-dibuat-5')">
+            <div id="ttd-dibuat-5" class="image-preview-container flex-grow hidden">
+              <img src="" alt="Preview TTD" class="image-preview object-contain">
+            </div>
+            <input type="text" class="table-input mt-2" placeholder="Supervisor 5" value="">
+          </div>
+        </div>
+
+        <!-- DIKETAHUI OLEH (MANAJEMEN) -->
+        <h4 class="font-semibold text-slate-700 mb-4">Diketahui oleh:</h4>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          
+          <!-- Manager Operasional -->
+          <div class="signature-box">
+            <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'ttd-diketahui-1')">
+            <div id="ttd-diketahui-1" class="image-preview-container flex-grow hidden">
+              <img src="" alt="Preview TTD" class="image-preview object-contain">
+            </div>
+            <input type="text" class="table-input mt-2" placeholder="Manager Operasional" value="">
+          </div>
+          
+          <!-- Team Leader -->
+          <div class="signature-box">
+            <input type="file" class="form-input-file-small no-print" accept="image/*" onchange="previewFile(this, 'ttd-diketahui-2')">
+            <div id="ttd-diketahui-2" class="image-preview-container flex-grow hidden">
+              <img src="" alt="Preview TTD" class="image-preview object-contain">
+            </div>
+            <input type="text" class="table-input mt-2" placeholder="Team Leader" value="">
+          </div>
+        </div>
+      </div>
+      
+    </section>
+
+  </div>
+
+  <!-- JavaScript untuk Fungsionalitas Dinamis -->
+  <script>
+    // --- Variabel Global AI ---
+    const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=";
+    const API_KEY = ""; // Akan diisi oleh Canvas secara otomatis
+    const SYSTEM_PROMPT = "Anda adalah asisten yang membantu menyusun laporan mingguan untuk manajer pengelola rusun. Gunakan bahasa Indonesia yang profesional, formal, dan ringkas. Fokus pada poin-poin kunci.";
+
+    // --- Variabel Global Grafik ---
+    let recapChart = null;
+    let dailyTrendChart = null;
+    let crewChart = null;
+
+    /**
+     * Menampilkan preview gambar yang di-upload.
+     */
+    function previewFile(input, previewContainerId) {
+      const file = input.files[0];
+      const previewContainer = document.getElementById(previewContainerId);
+      if (!previewContainer) {
+        console.error(`Preview container with id ${previewContainerId} not found.`);
+        return;
+      }
+      const previewImage = previewContainer.querySelector('img');
+      if (!previewImage) {
+        console.error(`img tag not found inside ${previewContainerId}.`);
+        return;
+      }
+
+      if (file) {
+        const reader = new FileReader();
+        
+        reader.onload = function(e) {
+          previewImage.src = e.target.result;
+          previewContainer.classList.remove('hidden');
+          // Untuk signature-box, kita pastikan display flex
+          if (previewContainer.parentElement.classList.contains('signature-box')) {
+            previewContainer.classList.add('flex');
+          }
+        }
+        
+        reader.readAsDataURL(file);
+      } else {
+        previewImage.src = "";
+        previewContainer.classList.add('hidden');
+        if (previewContainer.parentElement.classList.contains('signature-box')) {
+          previewContainer.classList.remove('flex');
+        }
+      }
+    }
+
+    // --- FUNGSI BARU UNTUK DOWNLOAD HTML ---
+
+    /**
+     * Mempersiapkan DOM untuk disimpan dengan menyalin nilai properti ke atribut.
+     * Ini PENTING agar nilai input/textarea tersimpan di file HTML.
+     */
+    function updateFormValuesBeforeSave() {
+      // 1. Update Textareas
+      document.querySelectorAll('textarea').forEach(textarea => {
+        textarea.innerHTML = textarea.value;
+      });
+
+      // 2. Update Input (text, number, date, time)
+      const inputTypes = ['text', 'number', 'date', 'time', 'hidden'];
+      inputTypes.forEach(type => {
+        document.querySelectorAll(`input[type="${type}"]`).forEach(input => {
+          input.setAttribute('value', input.value);
+        });
+      });
+
+      // 3. Update Select (Dropdown)
+      document.querySelectorAll('select').forEach(select => {
+        // Hapus atribut 'selected' lama jika ada
+        select.querySelectorAll('option').forEach(opt => opt.removeAttribute('selected'));
+        // Tambahkan atribut 'selected' ke opsi yang dipilih
+        if (select.selectedIndex >= 0) {
+          select.options[select.selectedIndex].setAttribute('selected', 'selected');
+        }
+      });
+    }
+
+    /**
+     * Memicu download file HTML dari kondisi halaman saat ini.
+     */
+    function downloadHTML() {
+      // Panggil fungsi helper untuk memastikan semua nilai tersimpan di HTML
+      updateFormValuesBeforeSave();
+
+      // Dapatkan judul dokumen (yang bisa diedit) untuk nama file
+      let docTitle = document.getElementById('report-title').value.trim();
+      let filename = 'laporan_terisi.html';
+      if (docTitle) {
+        // Ganti karakter yang tidak valid untuk nama file
+        filename = docTitle.replace(/[^a-z0-9\s-]/gi, '').replace(/\s+/g, '_') + '.html';
+      }
+
+      // Dapatkan seluruh konten HTML
+      const htmlContent = document.documentElement.outerHTML;
+
+      // Buat Blob (file dalam memori)
+      const blob = new Blob([htmlContent], { type: 'text/html' });
+
+      // Buat link download palsu
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = filename;
+      
+      // Klik link tersebut secara programatik
+      document.body.appendChild(a);
+      a.click();
+      
+      // Hapus link dan URL sementara
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+
+      alert('File HTML Anda sedang di-download!\n\nNama file: ' + filename);
+    }
+
+
+    // --- FUNGSI ASISTEN AI ---
+
+    /**
+     * Mengambil konteks dari seluruh laporan untuk diberikan ke AI.
+     */
+    function getReportContext() {
+      let context = "Data Laporan:\n";
+      try {
+        // Konteks dari Pelaksana (C)
+        context += "\n[PELAKSANA]\n";
+        const personelRows = document.getElementById('personel-table-body').rows;
+        for (const row of personelRows) {
+          const dept = row.cells[1].querySelector('input').value;
+          const name = row.cells[2].querySelector('input').value;
+          const ket = row.cells[7].querySelector('textarea').value;
+          if (dept || name) context += `- ${dept || 'N/A'}: ${name || 'N/A'} (Ket: ${ket || 'Hadir'})\n`;
+        }
+
+        // Konteks dari Kegiatan (D)
+        context += "\n[KEGIATAN HARIAN]\n";
+        const kegiatanRows = document.getElementById('kegiatan-table-body').rows;
+        for (const row of kegiatanRows) {
+          const tgl = row.cells[1].querySelector('input').value;
+          const lok = row.cells[2].querySelector('input').value;
+          const keg = row.cells[3].querySelector('textarea').value;
+          if (keg) context += `- (${tgl || 'N/A'} di ${lok || 'N/A'}): ${keg}\n`;
+        }
+        
+        // Konteks dari Monitoring (E)
+        context += "\n[HASIL MONITORING]\n";
+        const monitoringRows = document.getElementById('monitoring-table-body').rows;
+        for (const row of monitoringRows) {
+          const keg = row.cells[1].querySelector('textarea').value;
+          const capaian = row.cells[2].querySelector('textarea').value;
+          const outstanding = row.cells[3].querySelector('textarea').value;
+          const saran = row.cells[4].querySelector('textarea').value;
+          if (keg) context += `- Kegiatan: ${keg}\n  Capaian: ${capaian || 'Selesai'}\n  Outstanding: ${outstanding || 'Tidak ada'}\n  Saran: ${saran || 'Tidak ada'}\n`;
+        }
+        
+        // Konteks dari Rekap Unit (F)
+        context += "\n[REKAPITULASI UNIT]\n";
+        context += `- Guest In House (Total): ${document.getElementById('total-guest').value || 0}\n`;
+        context += `- Saleable Rooms (Total): ${document.getElementById('total-saleable').value || 0}\n`;
+        context += `- Out Of Order (Total): ${document.getElementById('total-ooo').value || 0}\n`;
+
+        // Konteks dari Evaluasi (G) - jika bukan targetnya
+        const evaluasiText = document.getElementById('evaluasi').value;
+        if (evaluasiText && targetId !== 'evaluasi') context += `\n[EVALUASI SEBELUMNYA]\n${evaluasiText}\n`;
+        
+        // Konteks dari Action Plan (H) - jika bukan targetnya
+        const actionPlanText = document.getElementById('actionplan').value;
+        if (actionPlanText && targetId !== 'actionplan') context += `\n[ACTION PLAN SEBELUMNYA]\n${actionPlanText}\n`;
+
+      } catch (e) {
+        console.error("Gagal mengambil konteks:", e);
+        context += "Gagal mengambil data dari tabel. Mohon isi data terlebih dahulu.\n";
+      }
+      return context;
+    }
+
+    /**
+     * Pemicu utama untuk memanggil AI.
+     */
+    async function generateWithAI(targetId) {
+      const targetTextarea = document.getElementById(targetId);
+      if (!targetTextarea) return;
+
+      const aiButton = document.querySelector(`button[onclick="generateWithAI('${targetId}')"]`);
+      const originalButtonHTML = aiButton.innerHTML;
+      
+      let prompt = "";
+      const context = getReportContext(targetId); // Kirim targetId untuk skip konteks diri sendiri
+      
+      if (targetId === 'evaluasi') {
+        prompt = `Berdasarkan data berikut:\n${context}\n\nBuatkan poin-poin (bullet points) untuk "LEMBAR EVALUASI" dari laporan ini. Fokus pada masalah, kejadian, dan hal-hal yang 'outstanding'.`;
+      } else if (targetId === 'actionplan') {
+        prompt = `Berdasarkan data berikut:\n${context}\n\nBuatkan poin-poin (bullet points) untuk "ACTION PLAN" (Rencana Tindak Lanjut) untuk minggu depan. Fokus pada solusi untuk 'outstanding' dan 'saran/rekomendasi' dari monitoring.`;
+      } else if (targetId === 'kesimpulan') {
+        prompt = `Berdasarkan data berikut:\n${context}\n\nBuatkan "KESIMPULAN" singkat (cukup 1-2 paragraf) dari seluruh laporan mingguan ini. Rangkum capaian utama dan tantangan.`;
+      }
+
+      if (!prompt) return;
+
+      // Tampilkan loading
+      targetTextarea.value = "Sedang membuat draf AI...\n\nHarap tunggu, ini mungkin perlu beberapa detik.";
+      aiButton.disabled = true;
+      aiButton.innerHTML = `<span class="spinner"></span> Loading...`;
+
+      try {
+        const responseText = await callGeminiAPI(prompt);
+        targetTextarea.value = responseText;
+      } catch (error) {
+        console.error("Error calling Gemini API:", error);
+        targetTextarea.value = `Gagal terhubung ke AI: ${error.message}\n\nSilakan coba lagi nanti atau periksa koneksi internet Anda.`;
+      } finally {
+        // Kembalikan tombol ke normal
+        aiButton.disabled = false;
+        aiButton.innerHTML = originalButtonHTML;
+      }
+    }
+
+    /**
+     * Fungsi untuk memanggil Gemini API.
+     */
+    async function callGeminiAPI(prompt) {
+      // Implementasi Exponential Backoff
+      let retries = 3;
+      let delay = 1000;
+      
+      while (retries > 0) {
+        try {
+          const payload = {
+            contents: [{ parts: [{ text: prompt }] }],
+            systemInstruction: {
+              parts: [{ text: SYSTEM_PROMPT }]
+            },
+          };
+
+          const response = await fetch(`${GEMINI_API_URL}${API_KEY}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if (!response.ok) {
+            // Jika error 429 (Too Many Requests), coba lagi
+            if (response.status === 429) {
+              throw new Error("429 Too Many Requests");
+            }
+            const errorBody = await response.text();
+            throw new Error(`HTTP error! status: ${response.status}, body: ${errorBody}`);
+          }
+
+          const result = await response.json();
+          
+          if (result.candidates && result.candidates[0].content && result.candidates[0].content.parts[0].text) {
+            return result.candidates[0].content.parts[0].text;
+          } else if (result.candidates && result.candidates[0].finishReason === "SAFETY") {
+            return "Konten tidak dapat dibuat karena alasan keamanan. Harap ubah input Anda.";
+          } else {
+            throw new Error("Respon AI tidak valid atau kosong.");
+          }
+        
+        } catch (error) {
+          console.warn(`Attempt failed: ${error.message}`);
+          retries--;
+          if (retries === 0) {
+            throw error; // Gagal setelah semua percobaan
+          }
+          await new Promise(resolve => setTimeout(resolve, delay));
+          delay *= 2; // Double delay untuk backoff
+        }
+      }
+    }
+
+  </script>
+
+
+
+
+
+
+</body></html>
